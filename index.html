@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Almendra' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>LengthFinder</title>
+</head>
+<body>
+    <center>
+        <h1><div class="head">Length Finder</div></h1>
+    </center>
+    <table class="input">
+        <tr>
+            <td colspan="2" class="displayHead">Client Name</td>
+        </tr>
+        <tr>
+            <td class="displayText">
+                Prefix
+            </td>
+            <td class="fillValue">
+                <select id="txtPrefix" class="selectPrefix">
+                    <option value="Select">Select</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Dr">Dr</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="displayText">First Name</td>
+            <td class="fillValue">
+                <input type="text" placeholder="First Name" id='txtFN'>
+            </td>
+        </tr>
+        <tr>
+            <td class="displayText">
+                Middle Initial
+            </td>
+            <td class="fillValue">
+                <input type="text" placeholder="MI" style="width: 30px;" id="txtMI">
+            </td>
+        </tr>
+        <tr>
+            <td class="displayText">
+                Last Name
+            </td>
+            <td class="fillValue">
+                <input type="text" placeholder="Last Name" id="txtLN">
+            </td>
+        </tr>
+        <tr>
+            <td class="displayText">
+                Suffix
+            </td>
+            <td class="fillValue">
+                <select id="txtSuffix" class="selectSuffux">
+                    <option value="Select">Select</option>
+                    <option value="Jr">Jr</option>
+                    <option value="Sr">Sr</option>
+                    <option value="Esq">Esq</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <input class="displayButton" type="button" value="Generate" onclick="joinName();">
+    <input class="displayText" type="text" id="name">
+    
+</body>
+<script type="text/javascript">
+    function joinName()
+    {
+    var prefix = document.getElementById('txtPrefix').value;
+    var FN = document.getElementById('txtFN').value;
+    var MI = document.getElementById('txtMI').value;
+    var LN = document.getElementById('txtLN').value;
+    var suffix = document.getElementById('txtSuffix').value;
+    if(prefix != ""){
+        prefix = prefix +" ";
+    }
+    if(MI != ""){
+        MI = " "+ MI +" ";
+    }
+    if(suffix != ""){
+        suffix =  " " + suffix;
+    }
+    document.getElementById('name').value = prefix+FN+MI+LN+suffix;
+    
+    }
+    </script>
+</html>
